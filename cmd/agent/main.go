@@ -76,7 +76,7 @@ var (
 	component           = flag.String("component", "", "The component name (predictor, explainer, transformer) to add as header to log events")
 	metadataHeaders     = flag.StringSlice("metadata-headers", nil, "Allow list of headers that will be passed down as metadata")
 	metadataAnnotations = flag.StringSlice("metadata-annotations", nil, "Allow list of metadata annotation to be passed with payload logging")
-	logAllResponses     = flag.Bool("log-all-responses", false, "Log response payloads regardless of status code, and stamp events with the status code")
+	logAllResponses     = flag.Bool("log-all-responses", true, "Log response payloads regardless of status code, and stamp events with the status code")
 	// batcher flags
 	enableBatcher = flag.Bool("enable-batcher", false, "Enable request batcher")
 	maxBatchSize  = flag.String("max-batchsize", "32", "Max Batch Size")
