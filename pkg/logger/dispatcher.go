@@ -62,7 +62,7 @@ func StartDispatcher(nworkers int, store Store, batchStrategy BatchStrategy, log
 	// Create workers for HTTP CloudEvents processing.
 	for i := range nworkers {
 		logger.Info("Starting worker ", i+1)
-		worker := NewWorker(i+1, workerQueue, logger, cfg.httpClientTimeout)
+		worker := NewWorker(i+1, workerQueue, logger, WithHTTPClientTimeout(cfg.httpClientTimeout))
 		worker.Start()
 	}
 
